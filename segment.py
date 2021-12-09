@@ -17,6 +17,7 @@ for line in lines:
     output = line.split(" | ")[1].split(" ")
     mappings = {}
     inverse_mappings = [''] * 10
+
     for segment in signals:
         segment = "".join(sorted(segment))
         if len(segment) == 2:
@@ -27,11 +28,14 @@ for line in lines:
             mappings[segment] = 4
         elif len(segment) == 7:
             mappings[segment] = 8
+            
     for seg in mappings:
         inverse_mappings[mappings[seg]] = seg
+
     top_char = differenceOfStrings(inverse_mappings[7], inverse_mappings[1])
     top_left_and_middle_char = differenceOfStrings(inverse_mappings[4], inverse_mappings[1])
     bottom_left_and_bottom_char = differenceOfStrings(inverse_mappings[8], inverse_mappings[4] + top_char)
+
     for segment in signals:
         segment = "".join(sorted(segment))
         if len(segment) == 6:
@@ -48,6 +52,7 @@ for line in lines:
                 mappings[segment] = 5
             else:
                 mappings[segment] = 3
+                
     sum += int("".join([str(mappings["".join(sorted(x))]) for x in output]))
 
 print(sum)
