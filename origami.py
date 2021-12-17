@@ -40,4 +40,4 @@ for point in points:
 
 print(sum(sum(row) for row in op))
 
-print("\n".join(["".join(["#" if x else "." for x in row]) for row in op]))
+print("\n".join(["".join(["█" if x else " " for x in row]) for row in op]))
