@@ -44,16 +44,6 @@ def evaluate(expr):
             c += 1
     return evaluateLTR(expr)
 
-def givePrecedenceToAddition(expr):
-    c = 0
-    while c < len(expr):
-        if expr[c] == "+":
-            expr = expr[: c - 2] + "(" + expr[c - 2: c + 3] + ")" + expr[c+3:]
-            c += 3
-        else:
-            c += 1
-    return expr
-
 total = 0
 
 for line in lines:
