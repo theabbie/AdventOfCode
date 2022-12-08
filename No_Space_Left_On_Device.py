@@ -3,7 +3,7 @@ with open("No_Space_Left_On_Device.txt") as file:
     lines = [line.rstrip() for line in lines]
 
 currdir = [""]
-ls = True
+ls = False
 tree = {"": {}}
 
 for l in lines:
