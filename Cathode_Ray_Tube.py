@@ -17,8 +17,8 @@ PIXEL = "█"
 screen = [[" "] * N for _ in range(M)]
 
 def draw(screen, cycle, x):
-    i = (cycle - 1) // 40
-    j = (cycle - 1) % 40
+    i = (cycle - 1) // N
+    j = (cycle - 1) % N
     if j in {x - 1, x, x + 1}:
         screen[i][j] = PIXEL
 
